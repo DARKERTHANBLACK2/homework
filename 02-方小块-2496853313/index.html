@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>潭州</title>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .swiper-container {
+            width: 100%;
+        }
+
+        .fl {
+            float: left
+        }
+
+        .fr {
+            float: right;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        li {
+            list-style-type: none
+        }
+
+        .swiper-container .btn_left {
+            left: 350px;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+
+        body {
+            background: url("img/bJ.png") no-repeat;
+        }
+        .hide{
+            display: none;
+
+        }
+
+        .container {
+            width: 1200px;
+            margin: 60px auto;
+            position: relative;
+        }
+
+        .class_list_panel {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 275px;
+            z-index: 2000;
+            overflow: hidden
+        }
+
+        .class_list_item li {
+            display: block;
+            width: 275px;
+            height: 36px;
+            line-height: 36px;
+            background: rgba(0, 0, 0, 0.7);
+            float: left
+        }
+
+        .class_list_item .active {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .class_list_item li i {
+            padding: 0 10px;
+            line-height: 36px;
+        }
+
+        .class_list_item .fr {
+        }
+
+        .class_detai_panel {
+            position: absolute;
+            z-index: 3000;
+            background: #fff;
+            border: 1px solid #000000;
+            padding: 10px 0;
+            height: 100%;
+            left: 275px;
+        }
+
+        .class_list_detail {
+            width: 396px;
+
+        }
+
+        .class_detai_panel li {
+            padding: 5px 0 5px 5px;
+            float: left;
+            display: block;
+            width: 190px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="container">
+        <div class="class_list_panel">
+            <ul class="class_list_item clearfix">
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+                <li class="main_List"><a href="javascript:void(0);"><i class=" icon-globe"></i>潭州课堂<i
+                        class="fr icon-angle-right"></i></a></li>
+
+
+            </ul>
+
+        </div>
+        <div class="class_detai_panel">
+            <ul id="detail" class="class_list_detail clearfix">
+            </ul>
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href=""><img src="img/01.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="img/01.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="img/01.jpg" alt=""></a></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev swiper-button-white  btn_left"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+
+            <!-- 如果需要滚动条 -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    </div>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper-3.4.2.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        autoplay: 3000,
+        // 如果需要分页器
+        pagination: '.swiper-pagination',
+
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+
+        // 如果需要滚动条
+        scrollbar: '.swiper-scrollbar',
+    })
+</script>
+<script>
+    var mainList = document.getElementsByClassName('main_List');
+    var detailList = document.querySelectorAll('#detail li');
+    arr = [];
+    for (var j = 0; j < mainList.length; j++) {
+        arr[j] = [j + '个课程的1', j + '个课程的2', j + '个课程的3', j + '个课程的4', j + '个课程的5', j + '个课程的6', j + '个课程的7', j + '个课程的8', j + '个课程的9', j + '个课程的10']
+    }
+
+    var detail = document.getElementById('detail');
+    for (var i = 0; i < mainList.length; i++) {
+        mainList[i].index = i;
+        mainList[i].onmouseenter = function () {
+            this.className = 'active';
+            showList(arr[this.index]);
+            detail.style.display="block";
+        };
+        mainList[i].onmouseleave = function () {
+                this.className = '';
+                detail.innerHTML = "";
+            detail.style.display="none";
+        }
+
+        detail.onmouseenter=function () {
+            this.style.display='block';
+        }
+        detail.onmouseleave=function () {
+            this.style.display='none'
+        }
+    }
+
+
+    function showList(arr) {
+        var len = arr.length;
+        var detail = document.getElementById('detail');
+
+        for (var i = 0; i < len; i++) {
+            detail.innerHTML += '<li>' + arr[i] + '</li>';
+
+        }
+    }
+
+</script>
+</body>
+</html>

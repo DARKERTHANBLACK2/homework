@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=5;
+    function fn() {
+        alert(a);
+        function b() {
+            a++;
+            alert(a);
+        }
+        return b;
+    }
+    var c = fn();
+    c();
+    fn()();
+    c();
+    alert(a);
+    
+5
+5
+
+</script>
+</body>
+</html>

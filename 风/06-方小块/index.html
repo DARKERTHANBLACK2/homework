@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{ margin: 0;padding: 0;font-family: "微软雅黑";overflow: hidden;}
+        body,html{-webkit-text-size-adjust: none;width: 100%;height: 100%;}
+        *{text-decoration: none;list-style: none;}
+        img{border: 0px;}
+        ul,li,dl,dd,dt,p,ol,h1,h2,h3,h4,h5{font-size: 12px;font-weight: 100;padding: 0;margin: 0;}
+        .wrap{margin: 0 auto;}
+        .fl{float: left;}
+        .fr{float: right;}
+        .index{overflow: hidden;}
+        .clr{clear:both; height:0px; width:100%; font-size:1px; line-height:0px; visibility:hidden; overflow:hidden;}
+        .pointer{cursor:pointer;}
+        a,input,button{ outline:none; }
+        ::-moz-focus-inner{border:0px;}
+        /*a:link {color:#0f0;text-decoration:none;}
+        a:visited {color: #FFFF00; text-decoration:none;}
+        a:hover {color: #00FF00; text-decoration:underline;}
+        a:active {color: #0000FF; text-decoration:underline;}*/
+        a{color: #000;}
+        .wrapper{clear: both;width: 100%;}
+
+
+#overlay{
+display: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+
+}
+#box{
+    width: 100px;
+    height: 100px;
+    background: #000000;
+}
+        #con{
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 200px;
+            background: #ffffff;
+        }
+
+        #con li{
+            width: 200px;
+            height: 30px;
+            margin: 5px auto;
+            border: 1px solid red;
+        }
+        #con li i{
+            font-style: normal;
+            margin-left: 10px;
+        }
+        #con li span{
+             display: inline-block;
+            width: 45px;
+            height: 20px;
+            border: 1px solid #000000;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<input type="button" value="修改" id="btn">
+
+<div id="overlay">
+    <ul id="con">
+        <li>
+            <i>颜色</i>
+            <span style="background: red"></span>
+            <span style="background: yellow"></span>
+            <span style="background: green"></span>
+        </li>
+        <li>
+            <i>宽度</i>
+            <span>100px</span>
+            <span>200px</span>
+            <span>300px</span>
+        </li>
+        <li>
+            <i>高度</i>
+            <span>100px</span>
+            <span>200px</span>
+            <span>300px</span>
+        </li>
+    </ul>
+</div>
+
+
+<script>
+
+    var btn=document.getElementById('btn'),
+         box=document.getElementById('box'),
+        overLay=document.getElementById('overlay'),
+        spanArr=document.getElementsByTagName('span');
+    console.log(spanArr[3].innerHTML);
+    btn.onclick=function () {
+    overLay.style.display='block';
+    }
+    spanArr[0].onclick=function () {
+        box.style.backgroundColor=this.style.backgroundColor;
+    }
+    spanArr[1].onclick=function () {
+        box.style.backgroundColor=this.style.backgroundColor;
+    }
+    spanArr[2].onclick=function () {
+        box.style.backgroundColor=this.style.backgroundColor;
+    }
+    //width
+    spanArr[3].onclick=function () {
+        box.style.width=this.innerHTML;
+    }
+    spanArr[4].onclick=function () {
+        box.style.width=this.innerHTML;
+    }
+    spanArr[5].onclick=function () {
+        box.style.width=this.innerHTML;
+    }
+    spanArr[6].onclick=function () {
+        box.style.height=this.innerHTML;
+    }
+    spanArr[7].onclick=function () {
+        box.style.height=this.innerHTML;
+    }
+    spanArr[8].onclick=function () {
+        box.style.height=this.innerHTML;
+    }
+
+    overLay.ondblclick=function () {
+        this.style.display="none";
+    }
+</script>
+</body>
+</html>

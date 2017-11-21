@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    *{margin: 0;padding: 0;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="panel">
+    <div class="title"></div>
+    <div class="tips"></div>
+
+    <button class="confirm">确认</button>
+    </div>
+</div>
+
+
+
+<script  src="js/jquery.min.js"></script>
+<script>
+$.weui={};
+$.weui.alert=function (con) {
+    con=$.extend({
+        title:'23',
+        tips:'23'
+    },con);
+    var a=$('.panel');
+    a.find('.title').text(con.title);
+    a.find('.tips').text(con.tips);
+    a.on('click touched','.confirm',function () {
+        a.hide();
+    })
+a.show();
+}
+$.weui.alert({
+    title: '222',
+    tips: '该类型不允许上传'
+});
+
+    
+
+</script>
+
+</body>
+</html>

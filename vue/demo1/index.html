@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="page=='login'">
+        <h1>登录</h1>
+        <button @click="page='shangpin'">商品</button>
+        <button @click=" page='zhuce' ">注册</button>
+    </div>
+    <div v-else-if="page=='shangpin'">
+        <h1>商品</h1>
+        <ul>
+            <li v-for="item in goods">{{item.name}} 价格：{{item.jiage}}
+                <button @click="page='detail'">购买</button>
+            </li>
+        </ul>
+    </div>
+<div v-else-if="page=='detail'">
+    <h1>详情</h1>
+
+    <input type="text" v-model="star">
+<span>分数</span> <span  v-for="item in score()">{{item}}</span>
+<span>价格</span>
+    单价：{{item.jiage}}
+    金额：{{item.jiage*}}
+    <button >结算</button>
+</div>
+    <div v-else>
+        <h1>注册</h1>
+        <button @click="page='login'">登录</button>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            page: 'login',
+            goods: [
+                {name: '肥皂', jiage: 10},
+                {name: '牙刷', jiage: 20},
+                {name: '洗衣粉', jiage: 30}
+            ],
+            star: 2.9
+        },
+        methods: {
+            score: function () {
+                    var result=[];
+                    var score=Math.floor(this.star);
+                    var xiaoshu=(this.star-score)>=0.5;
+                    for(var i=0;i<score;i++){
+                        result.push('☀');
+                    }
+                    if(xiaoshu){
+                        result.push('★');
+                    }
+                    while(result.length<10){
+                        result.push('☆');
+                    }
+
+                    return result;
+                },
+            jine:function (num,item) {
+                this.$set(item,'num',0);
+            }
+        }
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-方小块</title>
+</head>
+<style>
+    *{margin: 0;padding: 0}
+    .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .wrap{margin: auto;width: 1000px;background: #ddd;padding: 50px;}
+    .box{width: 150px;height: 150px;margin: auto;box-shadow: 10px 10px 10px #aaa;-moz-box-shadow:10px 10px 10px #aaa;border-radius: 10px; color:#fff;text-align: center;line-height: 150px; }
+    .box1{background: red;}
+    .box2{background: deeppink;margin-top: 20px;}
+</style>
+<body>
+<div class="wrap  ">
+    <div id="box1" class="box box1"></div>
+    <div id="box2" class="box box2"></div>
+</div>
+<script>
+    var box1=document.getElementById('box1');
+    var box2=document.getElementById('box2');
+    box1.onclick=function (){
+        changeInner(box1,"这个盒子被点击了");
+        changeInner(box2,"box1被点击了");
+    };
+    box2.onclick=function (){
+        changeInner(box2,"这个盒子被点击了");
+        changeInner(box1,"box2被点击了");
+    };
+    box1.onmouseover=function () {
+        changeInner(box1,"这个盒子被移入了");
+        changeInner(box2,"box1被移入了");
+    };
+    box2.onmouseover=function () {
+        changeInner(box2,"这个盒子被移入了");
+        changeInner(box1,"box2被移入了");
+    };
+    box1.onmouseout=function () {
+        changeInner(box2,"");
+        changeInner(box1,"");
+    };
+    box2.onmouseout=function () {
+        changeInner(box2,"");
+        changeInner(box1,"");
+    };
+    function changeInner(box,cont) {
+        box.innerHTML=cont;
+    }
+</script>
+</body>
+</html>

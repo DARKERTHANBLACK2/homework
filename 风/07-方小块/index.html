@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+*{margin: 0;padding: 0};
+        li{list-style-type: none;}
+        #box{
+            width: 400px;
+            height: 400px;
+            margin: 10px auto;
+        }
+        .btn{height: 30px;}
+        .btn span{height: 30px;background: darkcyan;color: #dddddd}
+        .btn span .on{background: #f60;}
+        .banner{
+            position: relative;
+            width: 100%;
+            height: 270px;
+        }
+        .pic{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .pic li{
+             display: none;
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 100px;
+            text-align: center;
+            line-height: 270px;
+              }
+        .pic .on{
+            display: block;
+        }
+
+        .pic p{
+            position: absolute;
+            height: 25px;
+            background: rgba(0,0,0,.3);
+            color: #fff;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .top{
+            top:0;
+            left: 0;
+            width: 100%;
+        }
+        .bottom{
+            left:0;
+            bottom: 0;
+            width: 100%;
+        }
+       .pic .left{
+           top:50%;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+<div class="btn">
+<span>循环切换</span>
+<span>单项切换</span>
+</div>
+<div class="banner">
+<ul class="pic">
+    <li class="on" style="background: cornflowerblue">1</li>
+    <li style="background: deeppink">2</li>
+    <li style="background: orange">3</li>
+    <li style="background: darkkhaki">4</li>
+    <li style="background: left">5</li>
+</ul>
+    <p class="top"><span>6</span></p>
+    <p class="bottom">第 <span>一</span>张照片</p>
+    <p class="left click">&lt;</p>
+    <p class="right click">&gt;</p>
+</div>
+</div>
+</body>
+</html>
