@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box圆周旋转</title>
+    <style>
+        *{margin: 0;padding:0}
+        #wrap{position: relative;width: 300px;height:300px;background: #e2e2e2;border-radius: 15px;padding: 10px;margin: 20px auto;box-shadow: 5px 10px 10px #ddd}
+        #wrap>#box{position:absolute;width: 10px;height:10px;border-radius: 5px;background: deeppink}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="box"></div>
+</div>
+<script>
+    var box=document.getElementById('box'),
+        out=document.getElementById('wrap'),
+          x0=out.clientWidth/2,
+           y0=out.clientWidth/2,
+           y1,x1,angle=0;
+
+    setInterval(function () {
+        angle++;
+        x1=x0+parseInt(out.clientWidth/2)*Math.cos(angle*Math.PI/180);
+        y1=y0+parseInt(out.clientWidth/2)*Math.sin(angle*Math.PI/180);
+        box.style.left=x1+'px';
+        box.style.top=y1+'px';
+    },20);
+
+        
+
+</script>
+
+</body>
+</html>

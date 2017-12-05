@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style-type: none}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+#box{
+    width: 1000px;
+    margin: 0 auto;
+    background: #aaaaaa;
+}
+#box li{width: 100%;float: left;height: 30px;line-height: 30px; border-bottom: 3px solid #23527c;color: #222;cursor: pointer;padding-left: 20px;}
+
+    </style>
+
+</head>
+<body>
+
+<ul id="box" class="clearfix">
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>花火</li>
+    <li>回来</li>
+    <li>爱要有你才完美</li>
+    <li>我是认真的</li>
+</ul>
+<p id="btn_all" class="btn">全选</p>
+<p id="btn_other" class="btn">反选</p>
+<script>
+    var a=[+0];
+    alert(a);
+    var oBox=document.getElementById('box'),
+        aLi=oBox.getElementsByTagName('li'),
+        oAll=document.getElementById('all'),
+        oRe=document.getElementById('reverse'),
+        length=aLi.length;
+    for(var i=0;i<length;i++){
+        aLi[i].onclick=function () {
+            this.classList.toggle('checked');
+        }
+    }
+</script>
+</body>
+</html>

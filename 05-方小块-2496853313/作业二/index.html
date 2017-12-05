@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{margin:0;padding:0}
+    #wrap{width: 500px;height: 300px;margin: 20px auto;border-radius: 15px;background: #337ab7;box-shadow: 10px 10px 10px #09058c;color: #fff;text-align: center}
+    #wrap>p{font-size: 30px;}
+    #wrap>p span{font-size: 30px;color: #ff6600}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>页面跳转</h1>
+    <p>即将在<span id="time">5</span>后跳转</p>
+</div>
+<script>
+var time=document.getElementById('time');
+   var timer= setInterval(function () {
+        time.innerText--;
+        if ((time.innerText+0) <= 0){
+            clearInterval(timer);
+            window.open('https://www.baidu.com', '_self');
+        }
+    },1000)
+</script>
+</body>
+</html>

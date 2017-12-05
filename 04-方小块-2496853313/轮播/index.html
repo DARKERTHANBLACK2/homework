@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .wrap{position:relative;width: 800px;height: 200px;margin: 30px auto;border: 1px solid red;}
+        li{list-style-type: none}
+        #left_panel ul li{width: 80px;height: 35px;border: 1px solid #888888;text-align: center;line-height: 35px;cursor: pointer}
+        #down_panel ul{position: absolute;bottom:2px;left:100px; }
+        #down_panel ul li{display: inline-block;width: 35px;height: 35px;border: 1px solid #888888}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="img_List">
+        <ul class="clearfix">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="left_panel">
+        <ul>
+
+        </ul>
+    </div>
+
+    <div id="down_panel">
+        <ul class="clearfix">
+            <li class="down_list"></li>
+        </ul>
+    </div>
+
+</div>
+
+
+<script>
+    var oLpan=document.getElementById('left_panel'),
+        oDpan=document.getElementById('down_panel');
+    var dataList={"0":{"title":"极速免税店","img":["red","blue","yellow","green","black"]},"1":{"title":"极速免税店","img":["red","blue","yellow","green","black"]},"2":{"title":"极速免税店","img":["red","blue","yellow","green","black"]},"3":{"title":"极速免税店","img":["red","blue","yellow","green","black"]},"4":{"title":"极速免税店","img":["red","blue","yellow","green","black"]}};
+    var count = Object.keys(dataList).length;
+
+
+    //添加数据至页面
+    (function () {
+        var innerList='';
+        for(var i=0;i<count;i++){
+            innerList +='<li>'+dataList[i]['title']+'</li>';
+        }
+        oLpan.getElementsByTagName('ul')[0].innerHTML=innerList;
+    })();
+
+
+
+    for (var m=0;m<4;m++){
+        oLpan.getElementsByTagName('li')[m].onclick=function (e) {
+            e.i=m;
+            changeButtom(e.i)
+        }
+    }
+
+
+    //点击左侧切换
+
+
+    //点击底部切换
+
+
+    
+    function changeButtom(i) {
+            var le=  Object.keys(dataList[i]['img']).length;
+            var mmm='';
+            for(var n=1;n<=le;n++){
+                mmm +='<li class="down_list">'+n+'</li>';
+            }
+            oDpan.getElementsByTagName('ul')[0].innerHTML=mmm;
+    }
+    function getImgList(i) {
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    function getNodeIndex(ele){
+        var i=0;
+        while(ele = ele.previousSibling){
+            i++;
+        }
+        return i;
+    }
+
+</script>
+
+
+</body>
+</html>

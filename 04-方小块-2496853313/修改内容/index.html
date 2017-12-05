@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style-type: none}
+        .wrap{margin: 10px auto;width: 1000px;box-shadow: 5px 5px 5px #eee;border: 1px solid #eee;}
+        .wrap ul>li{border-bottom: 2px solid deeppink;padding: 10px;}
+        .wrap ul>li p{display: inline-block;cursor: pointer}
+        .wrap ul>li>div>div{padding: 3px;background: #222222;color: #fff;display: inline-block;cursor: pointer}
+        input{display: none}
+    </style>
+</head>
+
+
+<body>
+<div class="wrap">
+    <ul id="box">
+        <li>
+            <div>
+                <p class="txt">点击修改</p>
+                <input  type="text">
+                <div class="btn">修改</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p class="txt">点击修改</p>
+                <input type="text">
+                <div class="btn">修改</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p class="txt">点击修改</p>
+                <input type="text">
+                <div class="btn">修改</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p class="txt">点击修改</p>
+                <input type="text">
+                <div class="btn">修改</div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<script>
+var oBox=document.getElementById('box'),
+    aBtn=oBox.getElementsByClassName('btn'),
+    bBtn=oBox.getElementsByClassName('txt'),
+    aInput=oBox.getElementsByTagName('input');
+for(var i=0;i<4;i++){
+    aBtn[i].index=i;
+aBtn[i].onclick=function () {
+    eFn(this.innerHTML === "修改" , this.index);
+};
+
+
+
+
+function eFn(b,i) {
+b=b+0;
+var  txt=[
+    aInput[i].value,
+    bBtn[i].innerHTML
+][b];
+
+    aInput[i].value=txt;
+    bBtn[i].innerHTML=txt;
+    b?aInput[i].style.display='block':aInput[i].style.display='none';
+    b?aBtn[i].innerHTML='确认':aBtn[i].innerHTML='修改';
+}
+
+}
+
+</script>
+</body>
+</html>
