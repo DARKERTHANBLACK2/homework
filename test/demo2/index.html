@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #x2{width: 100px;height: 100px;background: #337ab7;position: absolute;left: 800px;top: 0;}
+    </style>
 </head>
 <body>
-<div class="wrap">
-    <div class="left">
-        <p></p>
-    </div>
-    <div class="right"></div>
-</div>
+<div id="x2"></div>
+
+
+<script>
+var oBox=document.getElementById('x2');
+    function animation() {
+    var current=parseFloat(getStyle(oBox,'left')),
+        target=200,
+        speed=-10,
+        timer=null;
+        (function fn() {
+        current+=speed;
+        timer=requestAnimationFrame(fn);
+        if(Math.abs(current-target)<=Math.abs(speed)){
+        cancelAnimationFrame(fn);
+        current=target;
+        }
+        oBox.style.left=current+'px';
+        })();
+    }
+    animation();
+    function getStyle(obj,attr) {
+    return window.getComputedStyle?getComputedStyle(obj)[attr]:obj.currentStyle[attr];
+    }
+
+</script>
 </body>
 </html>
