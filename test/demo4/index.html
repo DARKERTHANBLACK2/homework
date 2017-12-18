@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="Anthor" content="阿飞老师" />
+    <title>Title</title>
+    <style>
+        *{ margin:0; padding:0; font-family:"Microsoft yahei",serif;}
+        li{ list-style-type: none;}
+        html,body{
+            height: 100%;
+        }
+        body{
+            background: -webkit-linear-gradient(top,#8bc1de,#f9a887);
+        }
+        #box{
+            position: relative;
+            width: 1000px;
+            height: 550px;
+            margin: 100px auto;
+        }
+        #left{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(255,255,255,.8);
+        }
+        #right{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(0,0,0,.4);
+        }
+        #left .title{
+            margin: 100px 0 0 50px;
+            color: #f60;
+        }
+        #left .title span{
+            color: #000;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #left .title span:hover{
+            color: #ff852c;
+        }
+        #left ul{
+            margin: 20px 0 0 50px;
+        }
+        #left ul li{
+            float: left;
+            padding: 3px 10px;
+            margin: 5px;
+            border: 1px solid #000;
+            font-size: 14px;
+        }
+        #left ul li i{
+            margin-right: 5px;
+        }
+        #left ul li span{
+            cursor: pointer;
+        }
+        #right ul{
+            margin: 100px 0 0 50px;
+        }
+        #right ul li{
+            float: left;
+            padding: 3px 10px;
+            font-size: 14px;
+            color: #fff;
+            border: 1px solid #fff;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="left">
+        <div class="title">
+            热门目的地：
+            <span>马来西亚</span>
+            <span>泰国</span>
+            <span>三亚</span>
+            <span>新西兰</span>
+            <span>云南</span>
+        </div>
+        <ul>
+          <!--<li><i>泰国</i> | <span>×</span></li>-->
+            <!--<li><i>新西兰</i> | <span>×</span></li>-->
+        </ul>
+    </div>
+    <div id="right">
+        <ul>
+            <!--<li>泰国</li>
+            <li>新西兰</li>-->
+        </ul>
+    </div>
+</div>
+<script>
+
+   var oLbox=document.getElementById('left'),
+       oLul=oLbox.querySelector("ul"),
+       oRbox=document.getElementById('right'),
+       oP=oLbox.getElementsByTagName('span'),
+       plength=oP.length;
+   for(var i=0;i<plength;i++){
+       oP[i].cilck=false;
+       oP[i].onclick=function () {
+           if(this.cilck==false){
+               var oInner=this.innerHTML,
+                   oLI=document.createElement("li");
+               oLI.innerHTML="<i>"+oInner+"</i> |";
+               var span=document.createElement("span");
+                    span.innerHTML='x';
+                    span.onclick=function () {
+                        this.cilck=false;
+                    }.bind(this);
+                    oLI.appendChild(span);
+                    oLul.appendChild(oLI);
+                    this.cilck=true;
+           }else {
+               console.log(1);
+           }
+
+
+       }
+       
+
+
+   }
+</script>
+</body>
+</html>
